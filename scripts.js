@@ -1,10 +1,13 @@
 const moves = ["rock", "paper", "scissors"]
+const buttons = document.querySelectorAll('#playerSelection button')
 
 let playerScore = 0
 let npcScore = 0
+let tieScore = 0
 let round = 0
+let playerMove = ""
 
-function npcPlay () {
+function npcMove () {
     let npcMove = moves[Math.floor(Math.random()*moves.length)]
     return npcMove
 }
@@ -12,51 +15,71 @@ function npcPlay () {
 function playRound () {
 
     round +=1
+    document.querySelector('#round').textContent = `Round: ${round}`
 
-    let playerSelection = prompt("Best out of 5... rock, paper, scissors, shoot!:").toLowerCase()
-    let npcSelection = npcPlay()
-
-    while (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-
-        playerSelection = prompt("Input invalid, please type rock, paper, or scissors.").toLowerCase()
-    }
+    let playerSelection = playerMove
+    let npcSelection = npcMove()
+    document.querySelector('#npcSelection').textContent = `NPC played ${npcSelection}`    
 
     if ((playerSelection === 'rock' && npcSelection === 'scissors') ||
       (playerSelection === 'scissors' && npcSelection === 'paper') ||
       (playerSelection === 'paper' && npcSelection === 'rock')) {
-    playerScore += 1
-    return `You won this round! ${playerSelection} beats ${npcSelection}`
+
+        playerScore += 1
+        document.querySelector('#playerScore').textContent = `Player: ${playerScore}`
+        document.querySelector('#roundResults').textContent = `You won this round! ${playerSelection} beats ${npcSelection}`
     } 
     else if (playerSelection === npcSelection) {
-        return 'This round is a tie!'
+        tieScore +=1
+        document.querySelector('#tieScore').textContent = `Tie: ${tieScore}`
+        document.querySelector('#roundResults').textContent = 'This round is a tie!'
     } 
     else {
         npcScore += 1
-        return `The NPC won this round! ${npcSelection} beats ${playerSelection}`
+        document.querySelector('#npcScore').textContent = `NPC: ${npcScore}`
+        document.querySelector('#roundResults').textContent = `The NPC won this round! ${npcSelection} beats ${playerSelection}`
     }
     
 }
 
+
+buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        playerMove = button.id
+
+        if (round == 5) {
+            playerScore = 0
+            npcScore = 0
+            tieScore = 0
+            round = 0
+            document.querySelector('#winner').textContent = ''
+        }
+
+        game()
+    })
+})
+
+
 function game () {
-    while ( round < 5)
-    {
-        console.log(playRound())
+    
+    if (round < 5) {
+        playRound()
     }
 
-    if (playerScore > npcScore)
-    {
-        return 'You won the game!'
-    }
-    else if (playerScore == npcScore) {
-        return 'The game is a tie!'
-    }
-    else {
-        return 'The NPC won the game!'
+    if (round == 5) {
+        if (playerScore > npcScore)
+        {
+            document.querySelector('#winner').textContent = 'You won the game!'
+        }
+        else if (playerScore == npcScore) {
+            document.querySelector('#winner').textContent = 'The game is a tie!'
+        }
+        else {
+            document.querySelector('#winner').textContent = 'The NPC won the game!'
+        }
+
     }
 
 }
-
-
-console.log(game())
 
 

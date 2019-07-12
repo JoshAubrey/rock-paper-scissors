@@ -1,0 +1,56 @@
+body{
+    font-family: 'Press Start 2P', cursive;
+    padding:20px;
+    font-weight: normal;
+}
+div {
+    padding-top:5px;
+    padding-bottom:5px;
+}
+h1, h2 {
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 120%;
+}
+button{
+    height: 36px;
+    line-height: 27px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    color: blue;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 11px 4px;
+    min-width: 54px;
+    padding: 0 16px;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+}
+button:focus, button:hover, button:active {
+    outline:none;
+    box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28);
+}
+#winner{
+    color:green;
+    font-size: 18px;
+    line-height: 120%;
+}
+#playerScore {
+    color:blue;
+}
+#npcScore {
+    color:red;
+}
+#npcSelection {
+    color:red;
+}
+#main {
+    float:left;
+    width: 70%;
+    font-family: 'Press Start 2P', cursive;
+}
+#gameResults {
+    float:right;
+    width:30%;
+    font-family: 'Press Start 2P', cursive;
+}
