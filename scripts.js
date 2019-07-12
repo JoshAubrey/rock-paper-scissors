@@ -42,24 +42,6 @@ function playRound () {
     
 }
 
-
-buttons.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        playerMove = button.id
-
-        if (round == 5) {
-            playerScore = 0
-            npcScore = 0
-            tieScore = 0
-            round = 0
-            document.querySelector('#winner').textContent = ''
-        }
-
-        game()
-    })
-})
-
-
 function game () {
     
     if (round < 5) {
@@ -81,5 +63,30 @@ function game () {
     }
 
 }
+
+function reset () {
+    playerScore = 0
+    document.querySelector('#playerScore').textContent = `Player: ${playerScore}`
+    npcScore = 0
+    document.querySelector('#npcScore').textContent = `NPC: ${npcScore}`
+    tieScore = 0
+    document.querySelector('#tieScore').textContent = `Tie: ${tieScore}`
+    round = 0
+    document.querySelector('#round').textContent = `Round: ${round}`
+    document.querySelector('#winner').textContent = ''
+}
+
+buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        playerMove = button.id
+
+        if (round == 5) {
+            reset()
+        }
+
+        game()
+    })
+})
+
 
 
