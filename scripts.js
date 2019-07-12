@@ -65,6 +65,8 @@ function game () {
 }
 
 function reset () {
+    document.querySelector('#npcSelection').textContent = ''
+    document.querySelector('#roundResults').textContent = ''
     playerScore = 0
     document.querySelector('#playerScore').textContent = `Player: ${playerScore}`
     npcScore = 0
