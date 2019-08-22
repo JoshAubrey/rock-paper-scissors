@@ -1,35 +1,50 @@
 <!doctype html>
 <head>
     <title>Rock, Paper, Scissors!</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <div id="main">
-        <div id="playerSelection" >
-            <h1>Best out of 5... rock, paper, scissors, shoot!</h1>
-            <button id="rock" value="rock">Rock</button>
-            <button id="paper" value="paper">Paper</button>
-            <button id="scissors" value="scissors">Scissors</button>
-        </div>
-
-        <div id="npcSelection"></div>
-
-        <div id="roundResults"></div>
-    </div>
-    <div id="gameResults">
-        <div id="score">
-            <h2>Score</h2>
-            <div id="round">Round: 0</div>
-            <div id="playerScore">Player: 0</div>
-            <div id="npcScore">NPC: 0</div>
-            <div id="tieScore">Tie: 0</div>
-        </div>
-        <div id="winner"></div>
+    <div id="title">
+        <h1>Rock, Paper, Scissors!</h1>
+        <small>(best out of 5)</small>
     </div>
 
+    <div id= "container">
+
+        <div id="main">
+            <div id="playerSelection" >
+                <div id="inputs">
+                    <div>Shoot!</div>
+                    <button id="rock" value="rock">Rock</button>
+                    <button id="paper" value="paper">Paper</button>
+                    <button id="scissors" value="scissors">Scissors</button>
+                </div>
+            </div>
+
+            <div id="npcSelection"></div>
+
+            <div id="roundResults"></div>
+        </div>
+
+        <div id="gameResults">
+            <div id="score">
+                <h2>Score</h2>
+                <div id="round">Round: 0</div>
+                <div id="playerScore">Player: 0</div>
+                <div id="npcScore">NPC: 0</div>
+                <div id="tieScore">Tie: 0</div>
+            </div>
+
+            <div id="winner"></div>
+        </div>
+
+    </div>
     <script src="scripts.js"></script>
 </body>
