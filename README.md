@@ -8,7 +8,7 @@ A 5 round rock paper scissors game against the computer!
 
 ## Project Requirements
 
-1. Create a blank HTML document with a link an external .js file. This game is going to be played completely from the console to start with.
+1. Create a blank HTML document with a link to an external .js file. This game is going to be played completely from the console to start with.
 2. Begin with a function called computerPlay that will randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’.
 3. Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection (case-insensitive) and computerSelection - and then return a string that declares the winner of the round.
 4. Write a NEW function called game(). Use the previous function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
