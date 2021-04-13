@@ -20,7 +20,7 @@ A 5 round rock paper scissors game against the computer!
 
 ```bash
 git clone https://github.com/JoshAubrey/rock-paper-scissors.git
-cd drum-kit
+cd rock-paper-scissors
 open index.html with browser of choice
 ```
 
